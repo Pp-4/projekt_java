@@ -42,7 +42,7 @@ public class BoardGameRental {
                     break;
                 case reading:
                     //reading();
-                    //TODO:to odczytanie listy książek, użytkowników, lub wypożyczeń
+                    //TODO:to odczytanie listy gier, użytkowników, lub wypożyczeń
                     break;
                 case importFromFile:
                     //importFromFile
