@@ -1,0 +1,2 @@
+BasicStates zawiera klasy odpowiedzalne za obsługę podstawowych stnów maszyny
+Podstawowe metody tych klas powinny zwracać obiekt klasy ProgramState
