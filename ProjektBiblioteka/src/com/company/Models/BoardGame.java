@@ -1,5 +1,6 @@
 package com.company.Models;
 
+import com.company.Models.EnumsForModels.AccesLevel;
 import com.company.Models.EnumsForModels.Complexity;
 import com.company.Models.EnumsForModels.GameCategory;
 
@@ -21,7 +22,17 @@ public class BoardGame implements IDataBaseObject{
     public List<GameCategory> gameCategory;
 
 
+    public BoardGame(String title,String designer,boolean isAvailable, int playingTimeInMinutes,int overallRank,int minimalAge,Complexity complexity,List<GameCategory>gameCategory){
 
+        this.title = title;
+        this.designer = designer;
+        this.isAvailable = isAvailable;
+        this.playingTimeInMinutes = playingTimeInMinutes;
+        this.overallRank = overallRank;
+        this.complexity = complexity;
+        this.gameCategory = gameCategory;
+
+    }
 
 
     @Override

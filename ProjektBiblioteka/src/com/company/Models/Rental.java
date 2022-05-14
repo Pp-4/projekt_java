@@ -1,6 +1,10 @@
 package com.company.Models;
 
+import com.company.Models.EnumsForModels.Complexity;
+import com.company.Models.EnumsForModels.GameCategory;
+
 import java.util.Date;
+import java.util.List;
 
 public class Rental implements  IDataBaseObject{
 
@@ -11,6 +15,17 @@ public class Rental implements  IDataBaseObject{
     public boolean isGameReturned;
     public Date rentalDate;
     public int payment;
+
+    public Rental(BoardGame boardGame, User user, boolean isGameReturned, Date rentalDate, int payment){
+
+        this.boardGame = boardGame;
+        this.user = user;
+        this.isGameReturned = isGameReturned;
+        this.rentalDate = rentalDate;
+        this.payment = payment;
+
+
+    }
 
     @Override
     public String sqlTableName() {
