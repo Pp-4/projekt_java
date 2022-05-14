@@ -1,3 +1,4 @@
+package out.com.company;
 
 
 public class Main {
