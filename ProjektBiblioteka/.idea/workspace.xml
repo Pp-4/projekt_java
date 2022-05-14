@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a70bdb9-1d44-4dcc-a553-1780b2c72041" name="Changes" comment="usunięcie zduplikowanego .idea" />
+    <list default="true" id="3a70bdb9-1d44-4dcc-a553-1780b2c72041" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,14 +115,6 @@
       <option name="presentableId" value="Default" />
       <updated>1652470536542</updated>
     </task>
-    <task id="LOCAL-00001" summary="usunięcie zduplikowanego .idea">
-      <created>1652524893424</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1652524893424</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,9 +127,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="usunięcie zduplikowanego .idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="usunięcie zduplikowanego .idea" />
   </component>
 </project>
