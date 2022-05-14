@@ -11,7 +11,7 @@ public class Menu {
 
     public static ProgramState MenuLoop(){
 
-        ProgramState changeProgramState = ProgramState.nullAction;
+        ProgramState changeProgramState = ProgramState.inMenu;
         String userCmd;
 
         try
