@@ -1,4 +1,0 @@
-Klasa models zawiera wszystkie podstawe klasy naszego programu
-
-Każdy model dzidziczy po interfejsie IDataBaseObjetc,
-Klasy implementujące ten interfejst muszą zawierać metodę, która zwraca odpowiednią tabelę z bazy danych
