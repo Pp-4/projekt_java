@@ -9,28 +9,40 @@ import java.util.List;
 public class BoardGame implements IDataBaseObject{
 
     public int gameId;
-
-
+    public String name;
+    public int yearPublished;
+    public int minPlayers;
+    public int maxPlayers;
     //Wszystkie poniższe informacje o grach planszowych można znależć na boardgamegeek.com
-    public String title;
-    public String designer;
-    public boolean isAvailable;
+
+
+
     public int playingTimeInMinutes;
+    public float avgRating;
     public int overallRank;
     public int minimalAge;
-    public Complexity complexity;
-    public List<GameCategory> gameCategory;
+    public float complexity;
+    public List<String> mechanics;
+    public List<String> domains;
+    public boolean isAvailable;
 
 
-    public BoardGame(String title,String designer,boolean isAvailable, int playingTimeInMinutes,int overallRank,int minimalAge,Complexity complexity,List<GameCategory>gameCategory){
+    public BoardGame(int gameId,String name,int yearPublished,int minPlayers,int maxPlayers, int playingTimeInMinutes,float avgRating, int minimalAge,List<String>mechanics, int overallRank,float complexity,List<String>domains,boolean isAvailable){
 
-        this.title = title;
-        this.designer = designer;
+        this.gameId = gameId;
+        this.yearPublished = yearPublished;
+        this.minPlayers = minPlayers;
+        this.maxPlayers = maxPlayers;
+        this.avgRating =avgRating;
+        this.minimalAge = minimalAge;
+        this.mechanics = mechanics;
+        this.name = name;
+
         this.isAvailable = isAvailable;
         this.playingTimeInMinutes = playingTimeInMinutes;
         this.overallRank = overallRank;
         this.complexity = complexity;
-        this.gameCategory = gameCategory;
+        this.domains = domains;
 
     }
 

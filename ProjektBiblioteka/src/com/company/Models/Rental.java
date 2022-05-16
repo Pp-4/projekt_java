@@ -10,14 +10,16 @@ public class Rental implements  IDataBaseObject{
 
 
 
+    public int rentalId;
     public BoardGame boardGame;
     public User user;
     public boolean isGameReturned;
     public Date rentalDate;
     public int payment;
 
-    public Rental(BoardGame boardGame, User user, boolean isGameReturned, Date rentalDate, int payment){
+    public Rental(int rentalId,BoardGame boardGame, User user, boolean isGameReturned, Date rentalDate, int payment){
 
+        this.rentalId = rentalId;
         this.boardGame = boardGame;
         this.user = user;
         this.isGameReturned = isGameReturned;

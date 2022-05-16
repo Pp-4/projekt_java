@@ -1,6 +1,7 @@
 package com.company.Models;
 
 import com.company.Models.EnumsForModels.AccesLevel;
+import com.company.ValidationAndHashing.PasswordHashing;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class User implements IDataBaseObject{
     public String firtsName;
     public  String lastName;
     public int age;
+    public String password;
     public AccesLevel accesLevel;
     public List<Rental> boardGamesRentals;
 
@@ -17,11 +19,12 @@ public class User implements IDataBaseObject{
 
 
 
-    public User(int id,String firstName, String lastName, int age, AccesLevel accesLevel){
+    public User(int id,String firstName, String lastName,String password, int age, AccesLevel accesLevel){
 
         this.id = id;
         this.firtsName = firstName;
         this.lastName =lastName;
+        this.password = PasswordHashing.doHashing(password);
         this.age= age;
         this.accesLevel = accesLevel;
     }
