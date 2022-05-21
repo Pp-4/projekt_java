@@ -8,7 +8,6 @@ import javax.naming.directory.InvalidAttributeIdentifierException;
 import java.util.Locale;
 import java.text.NumberFormat;
 //TODO:ZAPIS , SERIALIZACJA?
-//TODO: metoda scanner() zawiesza się na lini 652; błąd komiec pliku
 public class ReadFromFile {//obsługa tabeli
   public class graPlanszowa {
     // wszytie typy muszą mieć wrappery(typy pierwotne nie mają metody/pola class , dlaczego ? nie wiem)
@@ -35,8 +34,7 @@ public class ReadFromFile {//obsługa tabeli
     File pulpit = new File(System.getProperty("user.home"), "/Desktop");
     if (!new File(pulpit, nazwaBazy).canRead()) throw new FileNotFoundException("nie udało się odczytać pliku z bazą");
 
-
-    Scanner bazaDanych = new Scanner(new File(pulpit, nazwaBazy));
+    Scanner bazaDanych = new Scanner(new File(pulpit, nazwaBazy),"UTF-8");//wymagana informacja o kodowaniu, bez niej scanner nie działa poprawnie
     ArrayList<graPlanszowa> listaGier = new ArrayList<graPlanszowa>();
     bazaDanych.useDelimiter("\n|\\;");//tekst będzie rozbity przez średnik lub znak nowej lini
     bazaDanych.nextLine(); //pierwszy wiersz zaiwera nazwy kolumn
@@ -57,16 +55,10 @@ public class ReadFromFile {//obsługa tabeli
           else if (t == String[].class) f.set(tempGame, temp.split(","));
           else if (t == String.class) f.set(tempGame, temp);
           else throw new InvalidAttributeIdentifierException("Nieprawidłowy typ zmiennej!,\n Nie wiem jaki dać wyjątek #TODO");
-     
       }
-      a++;
       listaGier.add(tempGame);
-      System.out.println(tempGame.Name);//testy
-      if(a>=652){
-        bazaDanych.nextLine();
-        a = 0;
-        System.out.println(tempGame.Name);
-      }
+      if(a%100==0)System.out.println(a);//testy
+      a++;
     }
     bazaDanych.close();
     return listaGier;
