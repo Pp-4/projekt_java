@@ -9,14 +9,13 @@ import java.util.List;
 public class BoardGame implements IDataBaseObject{
 
     public int gameId;
-
-
     //Wszystkie poniższe informacje o grach planszowych można znależć na boardgamegeek.com
     public String title;
     public String designer;
     public boolean isAvailable;
     public int playingTimeInMinutes;
     public int overallRank;
+    public int OwnedUsers;
     public int minimalAge;
     public Complexity complexity;
     public List<GameCategory> gameCategory;

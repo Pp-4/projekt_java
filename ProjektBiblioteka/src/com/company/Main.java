@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 import com.company.CommonClasses.BoardGameRental;
 import com.company.CommonClasses.CrudActions.ReadFromFile;
 
@@ -10,9 +12,11 @@ public class Main {
         //BoardGameRental boardGameRental = new BoardGameRental();
         ReadFromFile test = new ReadFromFile();
         try {//test importu z pliku
-            test.read("bgg_dataset.csv");
+            ArrayList test2 =  test.read("bgg_dataset.csv");
+            test2.size();
         } catch (Exception e) {
             e.printStackTrace();
+            e.getCause();
         }
     }
 }
