@@ -38,8 +38,8 @@ public class ReadFromFile {//obsługa tabeli
     ArrayList<graPlanszowa> listaGier = new ArrayList<graPlanszowa>();
     bazaDanych.useDelimiter("\n|\\;");//tekst będzie rozbity przez średnik lub znak nowej lini
     bazaDanych.nextLine(); //pierwszy wiersz zaiwera nazwy kolumn
-    int a = 0;
-    while (bazaDanych.hasNextLine()) { //zapis kolejnych wierszy w tabeli do listy obiektów
+    int a = 0;  
+    while (bazaDanych.hasNext()) { //zapis kolejnych wierszy w tabeli do listy obiektów
   
       graPlanszowa tempGame = new graPlanszowa();
       Field[] pola = tempGame.getClass().getDeclaredFields();
@@ -48,19 +48,39 @@ public class ReadFromFile {//obsługa tabeli
         Class t = f.getType();//sprawdza typ aby wiedzieć jak sformatować otrzymanego stringa
         //edge case ,w przypadku klasy wewnętrznej do listy pól zostaje dodany parametr this$0 ,który trzeba olać
           if(t.getName() != this.getClass().getName())temp = bazaDanych.next();//dla pola this$0 nie odczytujemy wartości  
-          //System.out.println(t.getName()+" "+f.getName()+" "+temp);//testy
-          if (t == Integer.class) f.set(tempGame, Integer.parseInt(temp));
+          if(a>20340)System.out.println(t.getName()+" "+f.getName()+" "+temp);//testy
+          if (t == Integer.class) f.set(tempGame, TryParseStringToInteger(temp));
           else if (t.getName() == this.getClass().getName());//edge case ,w przypadku inner class do listy pól zostaje dodany parametr this$0 ,który trzeba olać
-          else if (t == Double.class) f.set(tempGame, NumberFormat.getNumberInstance(Locale.FRANCE).parse(temp).doubleValue());
+          else if (t == Double.class) f.set(tempGame, TryParseStringToDouble(temp));
           else if (t == String[].class) f.set(tempGame, temp.split(","));
           else if (t == String.class) f.set(tempGame, temp);
           else throw new InvalidAttributeIdentifierException("Nieprawidłowy typ zmiennej!,\n Nie wiem jaki dać wyjątek #TODO");
       }
       listaGier.add(tempGame);
-      if(a%100==0)System.out.println(a);//testy
-      a++;
+      if(a%20342==0 && a!=0){
+        System.out.println(a);//testy
+      }
+        a++;
     }
     bazaDanych.close();
     return listaGier;
   }
+ Integer TryParseStringToInteger(String x){//obsługa konwersji stringa na int
+  Integer y; 
+  try {
+     y = Integer.parseInt(x);
+   } catch (Exception e) {
+     y = 0;
+   }
+   return y;
+ }
+ Double TryParseStringToDouble(String x){//obsługa konwersji stringa na float
+  Double y; 
+  try {
+     y = NumberFormat.getNumberInstance(Locale.FRANCE).parse(x).doubleValue();
+   } catch (Exception e) {
+     y = 0d;
+   }
+   return y;
+ }
 }
