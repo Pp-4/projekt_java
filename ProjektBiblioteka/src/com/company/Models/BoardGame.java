@@ -8,42 +8,38 @@ import java.util.List;
 
 public class BoardGame implements IDataBaseObject{
 
+    //Wszystkie poniższe informacje o grach planszowych można znależć na boardgamegeek.com  
     public int gameId;
     public String name;
     public int yearPublished;
     public int minPlayers;
     public int maxPlayers;
-    //Wszystkie poniższe informacje o grach planszowych można znależć na boardgamegeek.com
-
-
-
     public int playingTimeInMinutes;
+    public int minimalAge;
     public float avgRating;
     public int overallRank;
-    public int minimalAge;
     public float complexity;
+    public int OwnedUsers;
     public List<String> mechanics;
     public List<String> domains;
     public boolean isAvailable;
 
-
-    public BoardGame(int gameId,String name,int yearPublished,int minPlayers,int maxPlayers, int playingTimeInMinutes,float avgRating, int minimalAge,List<String>mechanics, int overallRank,float complexity,List<String>domains,boolean isAvailable){
+//da się coś z tym zrobić ?
+public BoardGame(int gameId,String name,int yearPublished,int minPlayers,int maxPlayers, int playTime, int minimalAge,double avgRating,List<String>mechanics, int overallRank,doule complexity,List<String>domains,boolean isAvailable){
 
         this.gameId = gameId;
+        this.name = name;
         this.yearPublished = yearPublished;
         this.minPlayers = minPlayers;
         this.maxPlayers = maxPlayers;
         this.avgRating =avgRating;
         this.minimalAge = minimalAge;
         this.mechanics = mechanics;
-        this.name = name;
-
-        this.isAvailable = isAvailable;
         this.playingTimeInMinutes = playingTimeInMinutes;
         this.overallRank = overallRank;
         this.complexity = complexity;
         this.domains = domains;
-
+        this.isAvailable = isAvailable;
     }
 
 
