@@ -16,23 +16,23 @@ public class BoardGame implements IDataBaseObject{
     public int maxPlayers;
     public int playingTimeInMinutes;
     public int minimalAge;
-    public float avgRating;
+    public double avgRating;
     public int overallRank;
-    public float complexity;
+    public double complexity;
     public int OwnedUsers;
     public List<String> mechanics;
     public List<String> domains;
     public boolean isAvailable;
 
 //da się coś z tym zrobić ?
-public BoardGame(int gameId,String name,int yearPublished,int minPlayers,int maxPlayers, int playTime, int minimalAge,double avgRating,List<String>mechanics, int overallRank,doule complexity,List<String>domains,boolean isAvailable){
+public BoardGame(int gameId,String name,int yearPublished,int minPlayers,int maxPlayers, int playTime, int minimalAge,double avgRating,List<String>mechanics, int overallRank,double complexity,List<String>domains,boolean isAvailable){
 
         this.gameId = gameId;
         this.name = name;
         this.yearPublished = yearPublished;
         this.minPlayers = minPlayers;
         this.maxPlayers = maxPlayers;
-        this.avgRating =avgRating;
+        this.avgRating = avgRating;
         this.minimalAge = minimalAge;
         this.mechanics = mechanics;
         this.playingTimeInMinutes = playingTimeInMinutes;
