@@ -8,29 +8,38 @@ import java.util.List;
 
 public class BoardGame implements IDataBaseObject{
 
+    //Wszystkie poniższe informacje o grach planszowych można znależć na boardgamegeek.com  
     public int gameId;
-    //Wszystkie poniższe informacje o grach planszowych można znależć na boardgamegeek.com
-    public String title;
-    public String designer;
-    public boolean isAvailable;
+    public String name;
+    public int yearPublished;
+    public int minPlayers;
+    public int maxPlayers;
     public int playingTimeInMinutes;
-    public int overallRank;
-    public int OwnedUsers;
     public int minimalAge;
-    public Complexity complexity;
-    public List<GameCategory> gameCategory;
+    public float avgRating;
+    public int overallRank;
+    public float complexity;
+    public int OwnedUsers;
+    public List<String> mechanics;
+    public List<String> domains;
+    public boolean isAvailable;
 
+//da się coś z tym zrobić ?
+public BoardGame(int gameId,String name,int yearPublished,int minPlayers,int maxPlayers, int playTime, int minimalAge,double avgRating,List<String>mechanics, int overallRank,doule complexity,List<String>domains,boolean isAvailable){
 
-    public BoardGame(String title,String designer,boolean isAvailable, int playingTimeInMinutes,int overallRank,int minimalAge,Complexity complexity,List<GameCategory>gameCategory){
-
-        this.title = title;
-        this.designer = designer;
-        this.isAvailable = isAvailable;
+        this.gameId = gameId;
+        this.name = name;
+        this.yearPublished = yearPublished;
+        this.minPlayers = minPlayers;
+        this.maxPlayers = maxPlayers;
+        this.avgRating =avgRating;
+        this.minimalAge = minimalAge;
+        this.mechanics = mechanics;
         this.playingTimeInMinutes = playingTimeInMinutes;
         this.overallRank = overallRank;
         this.complexity = complexity;
-        this.gameCategory = gameCategory;
-
+        this.domains = domains;
+        this.isAvailable = isAvailable;
     }
 
 
