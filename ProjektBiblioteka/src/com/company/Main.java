@@ -16,6 +16,6 @@ public class Main {
         String lokalizacja = System.getProperty("user.dir")+"\\ProjektBiblioteka\\src\\com\\company\\OtherFiles";
         ArrayList<BoardGame> test2 =  test.read("bgg_dataset.csv",lokalizacja,BoardGame.class);
         //test.read odczytuje plik w podanej lokalizacji i próbuje go dopasować do podanego modelu
-        test2.size();
+        System.out.println(test2.size());
     }
 }
