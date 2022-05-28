@@ -1,5 +1,4 @@
 package com.company.CommonClasses.CrudActions;
-import java.io.*;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ public class ReadFromFile {//odczyt z tabeli lokalnej
 
   public <T> ArrayList<T> read(String nazwaBazy, String lokalizacja ,Class<T> model) throws Exception {
     //ta metoda odczytuje całą tabelę z pliku i zwraca tablicę obiektów utworzonych z tej tabeli
-    Scanner bazaDanych = uchwyt(nazwaBazy, lokalizacja);
+    Scanner bazaDanych = GetFile.uchwyt(nazwaBazy, lokalizacja);
     ArrayList<T> listaGier = new ArrayList<T>();
     bazaDanych.useDelimiter("\n|\\;");//tekst będzie rozbity przez średnik lub znak nowej lini
     bazaDanych.nextLine(); //pierwszy wiersz zawiera nazwy kolumn
@@ -20,7 +19,7 @@ public class ReadFromFile {//odczyt z tabeli lokalnej
       Field[] pola = tempGame.getClass().getDeclaredFields();
       String temp ="";//deklaracja zmiennej poza pętlą for ponieważ dla pola this$0 nie używam .next() (patrz niżej) 
       for (Field f : pola) {//pętla przypisuje do tempgame kolejne znalezione w tabeli wartości
-        Class t = f.getType();//sprawdza typ aby wiedzieć jak sformatować otrzymanego stringa
+        Class<?> t = f.getType();//sprawdza typ aby wiedzieć jak sformatować otrzymanego stringa
           if(t.getName() != this.getClass().getName() && f.getName()!= "isAvailable")temp = bazaDanych.next();//dla pola this$0 nie odczytujemy wartości , pole isAvailable pomijamy
           //System.out.println(t.getName()+" "+f.getName()+" "+temp);//testy
           if (t == Integer.class) f.set(tempGame, TryParseStringToInteger(temp));
@@ -39,20 +38,6 @@ public class ReadFromFile {//odczyt z tabeli lokalnej
     }
     bazaDanych.close();
     return listaGier;
-  }
- Scanner uchwyt(String plik,String lokalizacja) throws FileNotFoundException{
-    Scanner bazaDanych;
-    //wymagana informacja o kodowaniu, bez niej scanner nie działa poprawnie
-    try {//próba znaliezienia pliku w podanej lokalizacji
-      bazaDanych = new Scanner(new File(lokalizacja, plik),"UTF-8");
-    } catch (Exception e) {
-      try {//próba znaleziienia pliku na pulpicie
-        bazaDanych = new Scanner(new File(new File(System.getProperty("user.home"), "/Desktop"), plik),"UTF-8");
-      } catch (Exception f) {
-        throw new FileNotFoundException("nie udało się odczytać pliku z bazą");
-      }
-    }
-    return bazaDanych;
   }
  Integer TryParseStringToInteger(String x){//obsługa konwersji stringa na int
   Integer y; 
