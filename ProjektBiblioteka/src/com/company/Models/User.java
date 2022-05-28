@@ -28,6 +28,7 @@ public class User implements IDataBaseObject{
         this.age= age;
         this.accesLevel = accesLevel;
     }
+    public User(){}
 
     public String toString(){
 
