@@ -23,6 +23,7 @@ public  class CommonMessages {
         ClearConsole.clearConsole();
         System.out.println("-------------------");
         System.out.println("L - Log out");
+        System.out.println("R - Rent a board game");
         System.out.println("I - Show your data");
         System.out.println("U - Show and edit available users");
         System.out.println("B - Show and edit available board game ");
@@ -35,6 +36,7 @@ public  class CommonMessages {
         ClearConsole.clearConsole();
         System.out.println("-------------------");
         System.out.println("L - Log out");
+        System.out.println("R - Rent a board game");
         System.out.println("I - Show your data");
         System.out.println("U - Show available users");
         System.out.println("B - Show available board game ");
