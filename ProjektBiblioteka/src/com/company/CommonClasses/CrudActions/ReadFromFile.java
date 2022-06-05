@@ -33,7 +33,7 @@ public class ReadFromFile {//odczyt z tabeli lokalnej
           else if (t == Double.class) f.set(tempGame, TryParseStringToDouble(temp));
           else if (t == String[].class) f.set(tempGame, temp.trim().split(","));
           else if (t == String.class) f.set(tempGame, temp);
-          else if (t == Boolean.class) f.set(tempGame, true);
+          else if (t == Boolean.class) f.set(tempGame, TryParseStringToBool(temp));
           else if (t.getName() == this.getClass().getName());
           //edge case ,w przypadku inner class do listy pól zostaje dodany parametr this$0 ,który trzeba olać
           else throw new WrongTypeException();
@@ -63,4 +63,9 @@ public class ReadFromFile {//odczyt z tabeli lokalnej
    }
    return y;
  }
+  Boolean TryParseStringToBool(String x){
+    x = x.replaceAll("(\\r|\\n)", "");
+    if(x.equals("1") || x.equals("true") || x.equals("TRUE") || x.equals("")) return true;
+    else return false;
+  }
 }
