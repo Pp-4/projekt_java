@@ -39,9 +39,6 @@ public class ReadFromFile {//odczyt z tabeli lokalnej
           else throw new WrongTypeException();
       }
       listaGier.add(tempGame);
-      /*if(listaGier.size()>18985 && listaGier.size()%100 == 0){
-        System.out.println(listaGier.size());//debugowanie
-      }*/
     }
     bazaDanych.close();
     return listaGier;
