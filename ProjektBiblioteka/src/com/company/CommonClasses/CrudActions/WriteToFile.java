@@ -2,14 +2,14 @@ package com.company.CommonClasses.CrudActions;
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.ArrayList;
-import java.nio.charset.StandardCharsets;
+import com.company.OtherFiles.FileLoactions;
 public class WriteToFile {
-    public <T> Boolean write(String nazwaBazy, String lokalizacja ,ArrayList<T> tabela) {
-        File plik = GetFile.Plik(nazwaBazy, lokalizacja);
-        if(plik == null)return false;//gdyby nie udało znaleźć się pliku docelowego
+    public <T> Boolean write(String nazwaBazy,ArrayList<T> tabela) {
         try {
             BufferedWriter zapis = null;
-            zapis = new BufferedWriter(new FileWriter(plik,StandardCharsets.UTF_8));
+            zapis = GetFile.uchwytB(nazwaBazy, FileLoactions.Tablice());
+            if(zapis == null)return null;
+            //tworzenie uchywtu do tabeli
 
             //zapisanie nazw kolumn na początku tabeli
             Field[] wiersz0 = tabela.get(0).getClass().getDeclaredFields();
