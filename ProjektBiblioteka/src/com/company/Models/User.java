@@ -5,21 +5,18 @@ import com.company.ValidationAndHashing.PasswordHashing;
 
 import java.util.List;
 
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 public class User implements IDataBaseObject{
 
-    public int id;
+    public Integer id;
     public String firtsName;
-    public  String lastName;
-    public int age;
+    public String lastName;
+    public Integer age;
     public String password;
-    public AccesLevel accesLevel;
-    public List<Rental> boardGamesRentals;
-
-
-
-
-
-    public User(int id,String firstName, String lastName,String password, int age, AccesLevel accesLevel){
+    public Boolean accesLevel;
+    
+    public User(int id,String firstName, String lastName,String password, int age, Boolean accesLevel){
 
         this.id = id;
         this.firtsName = firstName;
