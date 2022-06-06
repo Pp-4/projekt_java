@@ -43,6 +43,14 @@ public BoardGame(int gameId,String name,int yearPublished,int minPlayers,int max
         this.domains = domains;
         this.isAvailable = isAvailable;
     }
+
+    @Override
+    public String toString() {
+
+        String output = "Title: "+ name + " Main domains: " + domains[0] +" Min palyers: " + minPlayers+ " Max palyers: "+ maxPlayers;
+        return output;
+    }
+
     @Override
     public String sqlTableName() {
 

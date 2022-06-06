@@ -30,6 +30,12 @@ public class Rental implements  IDataBaseObject{
 
 
     }
+    @Override
+    public String toString() {
+
+        String output = "Rental Id: "+ rentalId + " Board Game:  " + boardGame +" User : " + user+ " Status: " + isGameReturned;
+        return output;
+    }
 
     @Override
     public String sqlTableName() {

@@ -5,21 +5,18 @@ import com.company.ValidationAndHashing.PasswordHashing;
 
 import java.util.List;
 
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 public class User implements IDataBaseObject{
 
-    public int id;
+    public Integer id;
     public String firtsName;
-    public  String lastName;
-    public int age;
+    public String lastName;
+    public Integer age;
     public String password;
-    public AccesLevel accesLevel;
-    public List<Rental> boardGamesRentals;
-
-
-
-
-
-    public User(int id,String firstName, String lastName,String password, int age, AccesLevel accesLevel){
+    public Boolean accesLevel;
+    
+    public User(int id,String firstName, String lastName,String password, int age, Boolean accesLevel){
 
         this.id = id;
         this.firtsName = firstName;
@@ -32,7 +29,8 @@ public class User implements IDataBaseObject{
 
     public String toString(){
 
-        return String.format("id: %1$s, FirstName: %2$s, LasName: %3$s", id,firtsName,lastName);
+        String output = "Id: "+ id + " First name: :  " + firtsName +" Last name : " + lastName+ " " + accesLevel;
+        return output;
 
     }
 
