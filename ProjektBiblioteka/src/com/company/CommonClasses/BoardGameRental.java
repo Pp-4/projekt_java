@@ -1,8 +1,7 @@
 package com.company.CommonClasses;
 
-import com.company.CommonClasses.BasicStates.Menu;
+import com.company.CommonClasses.BasicStates.*;
 import com.company.CommonClasses.EnumsForCommonClasses.ProgramState;
-
 
 //BoardGameRental jest to główna klasa programu,
 //W ProramLoop znajduje się prosta maszyna stanów
@@ -12,7 +11,7 @@ public class BoardGameRental {
 
     public ProgramState programState;
     boolean isDone = false;
-    public BoardGameRental() {
+    public BoardGameRental() throws Exception {
 
         //docelowo program powinien zaczynać się od zalogowanie
         //programState = ProgramState.logIn;
@@ -23,42 +22,95 @@ public class BoardGameRental {
 
 
     }
-
-    public void ProgramLoop(){
+    public void ProgramLoop() throws Exception {
 
         while  (!isDone){
-
             switch(programState) {
                 case logIn:
-                    //logIn()
-                    //TODO:logowanie/rejestracja
+                    new LogIn();
+                    if(Variables.logInSucces){
+                        if(Variables.globalAdmin){
+                            programState = Menu.AdminLoop();
+                        }
+                        else{programState = Menu.UserLoop();}
+                    }
+                    else {
+                        programState = Menu.MenuLoopFirst();
+                    }
                     break;
+
+                case logOut:
+                    new LogOut();
+                    programState = Menu.MenuLoopFirst();
+                    break;
+
                 case inMenu:
-                    programState = Menu.MenuLoop();
+                    programState = Menu.MenuLoopFirst();
                     break;
-                case addingNewDBObject:
-                    // addingNewDBObject()
-                    //TODO: dodanie nowego elementu do bazy danych
+
+                case register:
+                    new Register();
+                    programState = Menu.MenuLoopFirst();
                     break;
-                case reading:
-                    //reading();
-                    //TODO:to odczytanie listy gier, użytkowników, lub wypożyczeń
+
+                case userShow:
+                    new UserShow();
+                    if(Variables.logInSucces){
+                        programState = Menu.UserLoop();
+                    }
+                    else{programState = Menu.MenuLoopFirst();}
                     break;
-                case importFromFile:
-                    //importFromFile
-                    //TODO:importowanie listy użytkowników i gier
+
+                case gameShow:
+                    new GameShow();
+                    if (Variables.logInSucces){
+                        if(Variables.globalAdmin){
+                            programState = Menu.AdminLoop();
+                        }
+                        else {programState = Menu.UserLoop();}
+                    }
+                    else {programState = Menu.MenuLoopFirst();}
                     break;
+
+                case date:
+                    new Date();
+                    if (Variables.logInSucces){
+                        if(Variables.globalAdmin){
+                            programState = Menu.AdminLoop();
+                        }
+                        else {programState = Menu.UserLoop();}
+                    }
+                    else {programState = Menu.MenuLoopFirst();}
+                    break;
+
                 case exit:
                     isDone = true;
+                    break;
+
+                case wait:
+                    if (Variables.logInSucces){
+                        if(Variables.globalAdmin){
+                            programState = Menu.AdminLoop();
+                        }
+                        else {programState = Menu.UserLoop();}
+                    }
+                    else {programState = Menu.MenuLoopFirst();}
+                    break;
+
+                case adminRegister:
+                    new AdminRegister();
+                    programState = Menu.MenuLoopFirst();
+                    break;
+
+                case rent:
+                    new Rent();
+                    if(Variables.globalAdmin){
+                        programState = Menu.AdminLoop();
+                    }
+                    else {programState = Menu.UserLoop();}
+                    break;
+
             }
         }
-
-
-
     }
-
-
-
-
-
 }

@@ -1,7 +1,7 @@
 package com.company.CommonClasses.Messages;
 
 //CommonMessages to klasa która zawiera wszystkie podstawowe komunikaty, któe są wyświetlane przy przejściu do nowego stnu maszyny
-//TODO: zrobienie funkcji wyświetlających informacje dla każdego stnu maszyny
+//TODO: zrobienie funkcji wyświetlających informacje dla każdego stanu maszyny
 public  class CommonMessages {
 
 

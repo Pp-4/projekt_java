@@ -29,9 +29,7 @@ public class User implements IDataBaseObject{
 
     public String toString(){
 
-        String output = "Id: "+ id + " First name: :  " + firtsName +" Last name : " + lastName+ " " + accesLevel;
-        return output;
-
+        return "Id: "+ id + " | Imie i nazwisko: " + firtsName +" " + lastName;
     }
 
     @Override
