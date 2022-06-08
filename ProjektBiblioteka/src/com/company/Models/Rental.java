@@ -10,15 +10,15 @@ public class Rental implements  IDataBaseObject{
 
 
 
-    public int rentalId;
+    public Integer rentalId;
     public BoardGame boardGame;
     public User user;
-    public boolean isGameReturned;
+    public Boolean isGameReturned;
     public Date rentalDate;
     public Date returnDate;
-    public float payment;
+    public Float payment;
 
-    public Rental(int rentalId,BoardGame boardGame, User user, boolean isGameReturned, Date rentalDate, Date returnDate,float payment){
+    public Rental(Integer rentalId,BoardGame boardGame, User user, Boolean isGameReturned, Date rentalDate, Date returnDate,Float payment){
 
         this.rentalId = rentalId;
         this.boardGame = boardGame;
@@ -30,6 +30,7 @@ public class Rental implements  IDataBaseObject{
 
 
     }
+    public Rental(){}
     @Override
     public String toString() {
 
