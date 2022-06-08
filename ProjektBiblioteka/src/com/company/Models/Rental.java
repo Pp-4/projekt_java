@@ -11,18 +11,18 @@ public class Rental implements  IDataBaseObject{
 
 
     public Integer rentalId;
-    public BoardGame boardGame;
-    public User user;
+    public Integer boardGameID;
+    public Integer userID;
     public Boolean isGameReturned;
     public Date rentalDate;
     public Date returnDate;
     public Float payment;
 
-    public Rental(Integer rentalId,BoardGame boardGame, User user, Boolean isGameReturned, Date rentalDate, Date returnDate,Float payment){
+    public Rental(Integer rentalId,Integer boardGame, Integer user, Boolean isGameReturned, Date rentalDate, Date returnDate,Float payment){
 
         this.rentalId = rentalId;
-        this.boardGame = boardGame;
-        this.user = user;
+        this.boardGameID = boardGame;
+        this.userID = user;
         this.isGameReturned = isGameReturned;
         this.rentalDate = rentalDate;
         this.returnDate = returnDate;
@@ -34,7 +34,7 @@ public class Rental implements  IDataBaseObject{
     @Override
     public String toString() {
 
-        String output = "Rental Id: "+ rentalId + " Board Game:  " + boardGame +" User : " + user+ " Status: " + isGameReturned;
+        String output = "Rental Id: "+ rentalId + " Board Game:  " + boardGameID +" User : " + userID+ " Status: " + isGameReturned;
         return output;
     }
 
