@@ -57,6 +57,15 @@ public  class CommonMessages {
         System.out.println("Q - Exit");
         System.out.println("-------------------");
     }
+    public static void EditInstructions(){
+        ClearConsole.clearConsole();
+        System.out.println("-------------------");
+        System.out.println("U - Edit list of users");
+        System.out.println("B - Edit list of boardgames");
+        System.out.println("R - Edit list of rentals");
+        System.out.println("Q - Exit");
+        System.out.println("-------------------");
+    }
 
 
 
