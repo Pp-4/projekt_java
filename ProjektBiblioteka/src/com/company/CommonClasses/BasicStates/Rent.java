@@ -14,5 +14,6 @@ public class Rent {
         ArrayList<BoardGame> ListaGier =  test.read("bgg_dataset.csv",BoardGame.class);
         ArrayList<User> Listaużytkowników =  test.read("users.csv",User.class);
         ArrayList<Rental> ListaWypozyczen =  test.read("rentTab.csv",Rental.class);
+        //todo
     }
 }
