@@ -4,16 +4,16 @@ package com.company.CommonClasses.EnumsForCommonClasses;
 
 public enum ProgramState {
     logIn,
+    register,
+    adminRegister,
+    userShow,
+    userShowAndEdit,
+    gameShow,
+    gameShowAndEdit,
     inMenu,
-    addingNewDBObject,
-    addingNewUser,
-    addingNewBoardGame,
-    addingNewRental,
-    reading,
-    update,
-    remove,
-    importFromFile,
-    fatalError,
-    nullAction,
+    rent,
+    logOut,
+    date,
+    wait,
     exit
 }

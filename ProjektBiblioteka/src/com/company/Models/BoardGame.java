@@ -5,6 +5,7 @@ import com.company.Models.EnumsForModels.Complexity;
 import com.company.Models.EnumsForModels.GameCategory;
 
 import java.util.List;
+import java.util.Objects;
 
 public class BoardGame implements IDataBaseObject{
 
@@ -46,9 +47,14 @@ public BoardGame(int gameId,String name,int yearPublished,int minPlayers,int max
 
     @Override
     public String toString() {
+        Integer Players;
 
-        String output = "Title: "+ name + " Main domains: " + domains[0] +" Min palyers: " + minPlayers+ " Max palyers: "+ maxPlayers;
-        return output;
+        if(Objects.equals(minPlayers, maxPlayers)){
+            return "Id:" + gameId + "| Tytul: "+ name + " | Gatunek: " + domains[0] +" | Ilosc graczy: " + maxPlayers;
+        }
+        else {
+            return "Id:" + gameId + "| Tytul: "+ name + " | Gatunek: " + domains[0] +" | Ilosc graczy: " + minPlayers+ "-"+ maxPlayers;
+        }
     }
 
     @Override
