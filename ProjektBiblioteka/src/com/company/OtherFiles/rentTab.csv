@@ -1,1 +1,2 @@
-rentalId;boardGame;user;isGameReturned;rentalDate;returnDate;payment
+rentalId;boardGameID;userID;isGameReturned;rentalDate;returnDate;payment
+1;10;10;false;01-01-1970;31-12-2038;0.0

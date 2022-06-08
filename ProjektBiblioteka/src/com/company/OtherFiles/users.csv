@@ -1,3 +1,4 @@
+rentalId;boardGameID;userID;isGameReturned;rentalDate;returnDate;payment
 id;firtsName;lastName;age;password;accesLevel
 1;Stefan;Kot;19;d41d8cd98f00b204e9800998ecf8427e;true
 2;Andrzej;Duda;47;d41d8cd98f00b204e9800998ecf8427e;false
@@ -7,5 +8,4 @@ id;firtsName;lastName;age;password;accesLevel
 6;Kuba;Wojewódzki;48;d41d8cd98f00b204e9800998ecf8427e;false
 7;Ludwik;Bośniak;71;d41d8cd98f00b204e9800998ecf8427e;false
 8;Kamil;Grzybicki;21;21232f297a57a5a743894a0e4a801fc3;true
-9;A;J;25;d41d8cd98f00b204e9800998ecf8427e;false
 10;A;J;25;4c55c191a2a6ca4c447a99adfefdfde8;true
