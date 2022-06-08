@@ -53,7 +53,26 @@ public class BoardGameRental {
                     programState = Menu.MenuLoopFirst();
                     break;
 
-                case userShow:
+                case userShowAndEdit:
+                    new UserShow();
+                    if(Variables.logInSucces){
+                        programState = Menu.UserLoop();
+                    }
+                    else{programState = Menu.MenuLoopFirst();}
+                    break;
+
+                case gameShowAndEdit:
+                    new GameShow();
+                    if (Variables.logInSucces){
+                        if(Variables.globalAdmin){
+                            programState = Menu.AdminLoop();
+                        }
+                        else {programState = Menu.UserLoop();}
+                    }
+                    else {programState = Menu.MenuLoopFirst();}
+                    break;
+
+                    case userShow:
                     new UserShow();
                     if(Variables.logInSucces){
                         programState = Menu.UserLoop();
@@ -71,7 +90,6 @@ public class BoardGameRental {
                     }
                     else {programState = Menu.MenuLoopFirst();}
                     break;
-
                 case date:
                     new Date();
                     if (Variables.logInSucces){
